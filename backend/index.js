@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import router from './routes/index.js'
 import cors from "cors";
 import cookieParser from "cookie-parser"
+import Posts from "./models/PostModel.js";
 dotenv.config()
 
 const app = express()
@@ -11,7 +12,7 @@ const app = express()
 try {
     await db.authenticate()
     console.log("DB Connected ke auth_node")
-
+    // await Posts.sync();
 } catch (error) {
     console.error(error)
 }

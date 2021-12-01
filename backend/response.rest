@@ -1,5 +1,5 @@
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJmZW5kaWxhdyIsImVtYWlsIjoiZmVuZGlsYXdAZ21haWwuY29tIiwiaWF0IjoxNjM4MjkxNDgyLCJleHAiOjE2MzgyOTE1MDJ9.OA9rO3ZTwwl0TieDB2n4izsOQoaxXBqhFe9ekrHPgtk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJmZW5kaWxhdyIsImVtYWlsIjoiZmVuZGlsYXdAZ21haWwuY29tIiwiaWF0IjoxNjM4MzUyNjM5LCJleHAiOjE2MzgzNTI2NTR9.XFLCEE4lFOOVz-y3uHc6YDssdpGjR2fsbQ7vUjX2C98
 ###
 POST http://localhost:5000/register
 Content-Type: application/json
@@ -25,3 +25,18 @@ GET http://localhost:5000/token
 
 ###
 DELETE http://localhost:5000/logout
+
+###
+GET http://localhost:5000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJmZW5kaWxhdyIsImVtYWlsIjoiZmVuZGlsYXdAZ21haWwuY29tIiwiaWF0IjoxNjM4MzUyNjg1LCJleHAiOjE2MzgzNTI3MDB9.KqS6712ynjbh_vpPNoUsWyFBvDs2hKgj8jyBX9qEI-o
+
+###
+POST http://localhost:5000/posts
+Content-Type: application/json
+
+{
+    "title": "My Blog",
+    "slug": "my-blog",
+    "body": "Ini Body Blog",
+    "description": "Blog Saya"
+}
