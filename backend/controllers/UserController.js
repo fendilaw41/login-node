@@ -10,13 +10,13 @@ export const getUsers = async(req, res) => {
         });
         res.json({
             status: true,
-            message: "Success Fetch Unit",
+            message: "Success Fetch User",
             data: users
         });
     } catch (error) {
         res.json({
             status: false,
-            message: "Gagal Fetch Unit",
+            message: "Gagal Fetch User",
             data: error
         });
     }
