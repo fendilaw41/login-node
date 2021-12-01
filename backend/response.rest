@@ -1,0 +1,27 @@
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJmZW5kaWxhdyIsImVtYWlsIjoiZmVuZGlsYXdAZ21haWwuY29tIiwiaWF0IjoxNjM4MjkxNDgyLCJleHAiOjE2MzgyOTE1MDJ9.OA9rO3ZTwwl0TieDB2n4izsOQoaxXBqhFe9ekrHPgtk
+###
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "name": "fendilaw",
+    "email": "fendilaw@gmail.com",
+    "password": "123456",
+    "confPassword": "123456"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "fendilaw@gmail.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
