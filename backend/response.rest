@@ -1,5 +1,5 @@
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJmZW5kaWxhdyIsImVtYWlsIjoiZmVuZGlsYXdAZ21haWwuY29tIiwiaWF0IjoxNjM4MzUyNjM5LCJleHAiOjE2MzgzNTI2NTR9.XFLCEE4lFOOVz-y3uHc6YDssdpGjR2fsbQ7vUjX2C98
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJmZW5kaWxhdyIsImVtYWlsIjoiZmVuZGlsYXdAZ21haWwuY29tIiwiaWF0IjoxNjM4MzczNDM5LCJleHAiOjE2MzgzNzM0NTl9.PqnaciY-tWDZBPTaXrCq2dh4-xAHrraoChNMgpPHn_Q
 ###
 POST http://localhost:5000/register
 Content-Type: application/json
@@ -31,12 +31,28 @@ GET http://localhost:5000/posts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJmZW5kaWxhdyIsImVtYWlsIjoiZmVuZGlsYXdAZ21haWwuY29tIiwiaWF0IjoxNjM4MzUyNjg1LCJleHAiOjE2MzgzNTI3MDB9.KqS6712ynjbh_vpPNoUsWyFBvDs2hKgj8jyBX9qEI-o
 
 ###
+GET http://localhost:5000/posts/1
+###
 POST http://localhost:5000/posts
 Content-Type: application/json
 
 {
-    "title": "My Blog",
-    "slug": "my-blog",
-    "body": "Ini Body Blog",
-    "description": "Blog Saya"
+    "title": "sdsd",
+    "slug": "sss",
+    "body": "sss",
+    "description": "ewewe"
 }
+
+###
+PATCH http://localhost:5000/posts/5
+Content-Type: application/json
+
+{
+    "title": "Blog Satu",
+    "slug": "blog-satu",
+    "body": "Ini Adalah Body Blog Satu",
+    "description": "Ini Adalah Keterangan Blog Satu"
+}
+
+###
+DELETE http://localhost:5000/posts/4
