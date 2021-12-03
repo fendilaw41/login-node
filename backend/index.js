@@ -6,7 +6,6 @@ import cors from "cors";
 import cookieParser from "cookie-parser"
 import Posts from "./models/PostModel.js";
 dotenv.config()
-
 const app = express()
 
 try {

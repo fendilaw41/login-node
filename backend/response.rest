@@ -40,7 +40,7 @@ Content-Type: application/json
     "title": "sdsd",
     "slug": "sss",
     "body": "sss",
-    "description": "ewewe"
+    "description": ""
 }
 
 ###

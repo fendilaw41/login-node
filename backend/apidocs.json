@@ -1,0 +1,186 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "description": "localhost",
+      "url": "http://localhost:5000"
+    }
+  ],
+  "info": {
+    "description": "API Login",
+    "version": "1.0.0",
+    "title": "API LOGIN"
+  },
+  "security": [
+    {
+      "password": [
+        "read",
+        "write"
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "password": {
+        "type": "oauth2",
+        "flows" : {
+          "password" : {
+            "tokenUrl" : "http://localhost:5000/token",
+            "scopes" : {
+              "write" : "allows modifying resources",
+              "read" : "allows reading resources"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "Authentication"
+    },
+    {
+      "name": "Posts",
+      "description": "Posts"
+    },
+    {
+      "name": "Users",
+      "description": "Users"
+    }
+  ],
+  "paths": {
+    "/posts": {
+      "get": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Get All Posts",
+        "description": "Mengambil Semua Data Get All Posts",
+        "responses": {
+          "200": {
+            "description": "Success Get All Posts"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Save Data Posts",
+        "consumes": "application/json",
+        "description": "Endpoint Simpan Data Post",
+        "responses": {
+          "200": {
+            "description": "Success Add Posts"
+          },
+          "400": {
+            "description": "Required"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "slug": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "slug": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Form Post data POSTS"
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Auth Login",
+        "consumes": "application/json",
+        "description": "Endpoint Auth",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Success Login"
+          },
+          "400": {
+            "description": "Invalid Password"
+          },
+          "404": {
+            "description": "Email Not Found"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Login Aplikasi"
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get Users",
+        "consumes": "application/json",
+        "description": "Endpoint Auth",
+        "responses": {
+          "200": {
+            "description": "Success Get Users"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  }
+}
